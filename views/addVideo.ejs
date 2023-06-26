@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+    <div class="w-25 mx-auto mt-5" >
+        <form action="/video" method="POST" class="tex-center" enctype="multipart/form-data">
+            <div class="mb-3 text-center">
+                <label for="ss" class="form-label text-center text-primary">Başlık</label>
+                <input class="form-control" placeholder="Video başlığı" id="ss" name="title" required/>
+            </div>
+            <div class="mb-3 text-center">
+                <label for="ss" class="form-label text-center text-primary">Açıklama</label>
+                <input class="form-control" placeholder="Video açıklaması" id="ss"  name="content" required/>
+            </div>
+            <div class="mb-3 text-center">
+                <input class="" type="file" name="video" id="ds" required enctype="multipart/form-data">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success ">Kaydet </button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <%- include("partials/footer"); -%>

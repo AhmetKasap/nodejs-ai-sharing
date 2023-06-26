@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+    <div class="w-25 mx-auto mt-5" >
+        <form action="/profile" method="POST" class="tex-center" enctype="multipart/form-data">
+            <div class="mb-3 text-center">
+                <label for="ss" class="form-label text-center text-primary">Kanal Açıklaması</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="ss" style="height: 100px" name="content" required></textarea>
+            </div>
+
+            <div class="mb-3 text-center">
+                <input class="" type="file" name="image" id="ds" required enctype="multipart/form-data">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success ">Kaydet </button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <%- include("partials/footer"); -%>

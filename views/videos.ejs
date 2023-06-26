@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary-emphasis fs-3" href="/">Seyran</a>
+
+      <a href="/logout" class="btn btn-outline-primary ms-auto">Logout</a>
+    </div>
+    </div>
+  </nav>
+  <hr>
+  <div class="row w-75 mx-auto">
+    <% if (typeof data !== 'undefined') { %>
+      <% data.forEach(result => { %>
+    
+        <% const pathVideo = result.video.path; %>
+        <% const splitPath = pathVideo.substring(pathVideo.indexOf('public') + 'public'.length); %>
+    
+        <div class="col-3 m-5">
+          <div class="d-flex flex-column">
+            <video src="<%= splitPath %>" type="video/mp4" controls style="width: 400px; height: 300px;" class="rounded"></video>
+            <div class="d-flex justify-content-between">
+              <p class="text-truncate flex-grow-1 mr-2 mt-2"><%= result.title %> </p>
+              <p class="text-right mt-2">SYR Coin</p>
+            </div>
+          </div>
+        </div>
+    
+      <% }) %>
+    <% } %>
+  </div>
+
+  <%- include("partials/footer"); -%>

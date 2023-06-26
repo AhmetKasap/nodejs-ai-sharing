@@ -1,0 +1,52 @@
+<%- include("partials/header"); -%>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary-emphasis fs-3" href="/">Seyran</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex justify-content-center align-items-center flex-grow-1">
+          <form class="d-flex">
+            <input class="form-control me-2 mx-sm-2" type="search" placeholder="Search" aria-label="Search"
+              style="width: 400px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+        <% if (typeof user !=='undefined' ) { %>
+          <% if (user) { %>
+            <a href="/admin" class="btn btn-outline-success ms-auto mr-2">Admin </a>
+            <a href="/logout" class="btn btn-outline-success ms-auto">Logout </a>
+            <% } else { %>
+              <a href="/login" class="btn btn-outline-success ms-auto">Login </a>
+              <% } %>
+                <% } else { %>
+                  <a href="/login" class="btn btn-outline-success ms-auto">Login</a>
+                  <% } %>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <div class="row w-75 mx-auto">
+    <% if (typeof data !=='undefined' ) { %>
+      <% data.forEach(result=> { %>
+
+        <% const pathVideo=result.video.path; %>
+          <% const splitPath=pathVideo.substring(pathVideo.indexOf('public') + 'public' .length); %>
+
+            <div class="col-3 m-5">
+              <div class="d-flex flex-column">
+                <video src="<%= splitPath %>" type="video/mp4" controls style="width: 400px; height: 300px;"
+                  class="rounded"></video>
+                  <div class="d-flex">
+                    <p class="flex-grow-1 mt-2"><%= result.title %></p> 
+                    
+                  </div>
+                  <div class="d-flex">
+                    <p><%= result.username %> </p>
+                    <div class="flex-grow-1"></div>
+                    <p class="text-right mb-0">SYR Coin</p>
+                  </div>
+              </div>
+            </div>
+            <% }) %>
+              <% } %>
+  </div>
+  <%- include("partials/header"); -%>

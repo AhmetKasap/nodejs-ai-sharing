@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+
+    <div class="w-25 mx-auto mt-5">
+        <form action="/chattext" method="POST">
+            <div class="mb-3 text-center">
+                <label for="ss" class="form-label text-center">Sese Dönüştürmek İstediğiniz Metini Girin</label>
+                <textarea type="text" class="form-control" id="ss" name="chattext" required>  </textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success ">Dönüştür</button>
+            </div>
+        </form>
+    </div>
+    <div class="w-25 mx-auto mt-4 text-center">
+        <a href="/admin" class="btn btn-outline-danger">Geri Dön</a>
+    </div>
+    <%- include("partials/footer"); -%>

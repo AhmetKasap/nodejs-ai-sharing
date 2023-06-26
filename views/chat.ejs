@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+    <div class="w-25 mx-auto mt-5">
+        <form action="/chat" method="POST">
+            <div class="mb-3 text-center">
+                <label for="ss" class="form-label text-center">Nasıl Yardımcı Olabilirim ?</label>
+                <textarea type="text" class="form-control" id="ss" name="chat" required>  </textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success ">✓ </button>
+            </div>
+        </form>
+    </div>
+    <div class="w-25 mx-auto mt-4 text-center">
+        <a href="/admin" class="btn btn-outline-danger">Geri Dön</a>
+    </div>
+    <hr>
+    <div class="w-50 mx-auto mt-5">
+        <% if (typeof resultChat !== 'undefined') { %>
+            <p><%= resultChat %></p>
+          <% } %>
+    </div>
+
+    <%- include("partials/footer"); -%>

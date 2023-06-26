@@ -1,0 +1,55 @@
+<%- include("partials/header"); -%>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary-emphasis fs-3" href="/">Seyran</a>
+      
+        <a href="/logout" class="btn btn-outline-primary ms-auto" >Logout</a>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <% if (typeof data !== 'undefined') { %>
+            <% const pathImg = data.img.path; %>
+            <% const splitPath = pathImg.substring(pathImg.indexOf('public') + 'public'.length); %>
+            <img src="<%= splitPath %>" class="card-img-top" alt="Profil Foto" style="width: 410px; height: 300px;">
+          <% } else { %>
+            <p>Henüz fotoğraf yüklemediniz.</p>
+          <% } %>
+
+          <div class="card-body">
+            <h3 class="card-title"> <%=user.name%> </h3>
+
+            <% if (typeof data !== 'undefined') { %>
+              <p class="card-text"><%= data.content %></p>
+            <% } else { %>
+              <p class="card-text">....</p>
+            <% } %>
+            <hr>
+            <p class="card-text">Abone Sayısı :  </p>
+            <p class="card-text">Video Sayısı : </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="w-100 mb-4">
+          <a href="/chat" class="btn btn-outline-danger me-2 mt-2">Kanalınızı Optimize Etmek İçin Yapay Zekadan Destek Alın</a>
+          <a href="/chat" class="btn btn-outline-danger me-2 mt-2">Metin Hazırlama Desteği</a>
+          <a href="/chattext" class="btn btn-outline-danger me-2 mt-4">Metini Sese Dönüştürme Desteği</a>
+          <br>
+          <a href="#" class="btn btn-outline-info mt-4">SYR Bakiyen</a>
+          <br>
+          <a href="/video" class="btn btn-outline-success me-2 mt-4">Video Yükle</a>
+          <a href="/videos" class="btn btn-outline-success mt-4">Videoların</a>
+          <br>
+          <a href="/profile" class="btn btn-outline-primary mt-4">Profil Düzenleme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("partials/footer"); -%>
